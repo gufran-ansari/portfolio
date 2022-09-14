@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Estimate Price {% endblock title %}
+{% block content %}
+
+<section class="quota">
+	<div class="quotaSection">
+		<div class="quotaImage">
+			<img src="{% static 'image/index/quota.png' %}" alt="">
+		</div>
+		<div class="quotaForm">
+			<div class="quotaHeader">
+				<h1>Estimate Price</h1>
+			</div>
+			<h6>Let us know more about your requirements and bugdet.</h6>
+			<form action="" method="post">
+				{% csrf_token %}
+				<div class="row">
+					<div class="form-group quotaInput col-md-6">
+						<label for="name" class="labels">Full Name</label>
+						<input type="text" name="name" class="form-control" placeholder="Enter Your Full Name" required>
+					</div>
+					<div class="form-group quotaInput col-md-6">
+						<label for="email" class="labels">Email</label>
+						<input type="email" name="email" class="form-control" placeholder="Enter Your Email Address.." required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group quotaInput col-md-6">
+						<label for="service" class="labels">Choose Service</label>
+						<select class="form-select" name="service" aria-label="Select Services" required>
+							<option value="" selected>Select</option>
+							{% for service in ourServices %}
+                        <option value="{{service.service_name}}">{{service.service_name}}</option>
+                        {% endfor %}
+						</select>
+					</div>
+					<div class="form-group col-md-6 quotaInput">
+						<label for="phone">Contact <small class="">(Optional)</small></label> <br>
+						<input type="tel" class="form-control" name=phone placeholder="Type Phone Number" id="phone">
+						<div class="msg">
+							<span id="valid-msg" class="hide">Valid</span>
+							<span id="error-msg" class="hide">Error</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group quotaInput">
+						<label for="quantity" class="labels">Quantity</label>
+						<input type="number" name="quantity" class="form-control" min="0" placeholder="Quantity" required>
+					</div>
+					<div class="form-group quotaInput">
+						<label for="approxBudget" class="labels">Approx Budget</label>
+						<input type="number" name="approxBudget" class="form-control" min="0" placeholder="Approx Budget" required>
+					</div>
+				</div>
+				<div class="form-group quotaInput">
+					<label for="service_desc" class="labels">Description</label>
+					<textarea name="service_desc" cols="30" rows="3" class="form-control" placeholder="We Need A Small Explanation About What You Need." required></textarea>
+				</div>
+				<input type="submit" value="Send Estimate Price" class="quotaBtn">
+			</form>
+		</div>
+	</div>
+</section>
+
+{% endblock content %}

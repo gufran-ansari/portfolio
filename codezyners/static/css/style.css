@@ -1,0 +1,194 @@
+:root {
+	/* Font Family */
+	--ff: 'Ubuntu', sans-serif;
+
+	/* Font Size */
+	--fs-xxl: 2rem;
+	--fs-xl: 1.875rem;
+	--fs-lg: 1.625rem;
+	--fs-md: 1.375rem;
+	--fs-sm: 1.125rem;
+	--fs-xs: 1rem;
+
+	/* Font Weight */
+	--fw-400: 400;
+	--fw-500: 500;
+	--fw-700: 700;
+
+	/* Colors */
+	--clr-body: #f8f9fa;
+	--clr-primary: #072028;
+	--clr-accent: #bf0c64;
+	--clr-hover: #e10946;
+	--clr-light: #e9ecef;
+}
+
+/* Universal Tag */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+/* TAGS */
+body,
+main,
+section {
+	background-color: var(--clr-body);
+	font-family: var(--ff);
+
+}
+
+/* ---------------------------------- Multi Purpose Classes ------------------------------------- */
+
+/* Font Size */
+.fs-xxl {
+	font-size: var(--fs-xxl);
+}
+
+.fs-xl {
+	font-size: var(--fs-xl);
+}
+
+.fs-lg {
+	font-size: var(--fs-lg);
+}
+
+.fs-md {
+	font-size: var(--fs-md);
+}
+
+.fs-sm {
+	font-size: var(--fs-sm);
+}
+
+.fs-xs {
+	font-size: var(--fs-xs);
+}
+
+/* Font Weight */
+.fw-400 {
+	font-weight: var(--fw-400);
+}
+
+.fw-500 {
+	font-weight: var(--fw-500);
+}
+
+.fw-700 {
+	font-weight: var(--fw-700);
+}
+
+/* Flex */
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Color */
+.clr-primary {
+	color: var(--clr-primary);
+}
+
+.clr-secondary {
+	color: var(--clr-secondary);
+}
+
+.clr-accent {
+	color: var(--clr-accent);
+}
+
+.clr-body {
+	color: var(--clr-body);
+}
+
+/* Background Color */
+.bgclr-primary {
+	color: var(--clr-primary);
+}
+
+.bgclr-secondary {
+	color: var(--clr-secondary);
+}
+
+.bgclr-accent {
+	color: var(--clr-accent);
+}
+
+.bgclr-body {
+	color: var(--clr-body);
+}
+
+/* Min Height */
+.mh-100 {
+	min-height: 100vh;
+}
+
+.mh-90 {
+	min-height: 90vh;
+}
+
+.mh-80 {
+	min-height: 80vh;
+}
+
+/* Button */
+.button {
+	outline: 0;
+	border: 0;
+	width: 10rem;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 50px;
+	padding: .75rem 1.25rem;
+	color: var(--clr-body);
+	font-size: var(--fs-sm);
+	font-weight: var(--fw-700);
+	transition: all 250ms ease-in-out;
+	background-color: var(--clr-accent);
+}
+
+.button:hover,
+.button:focus {
+	color: var(--clr-body);
+	background-color: var(--clr-hover);
+}
+
+
+.flex-reverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+
+
+/* ------------------------------------------------------------------------- Responsive --------------------------------------------------------------------------- */
+@media screen and (max-width:1099px) {}
+
+@media screen and (max-width:992px) {
+	.flex-direction {
+		flex-direction: column;
+	}
+
+	section {
+		margin: 7rem 0;
+	}
+}
+
+@media screen and (max-width:768px) {}
+
+@media screen and (max-width:457px) {
+	section {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width:349px) {}

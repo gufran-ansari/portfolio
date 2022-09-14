@@ -1,0 +1,168 @@
+.aboutSection {
+	min-width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row-reverse;
+	margin: 1rem;
+	gap: 1rem;
+}
+
+.aboutImg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+}
+
+.aboutImg img {
+	max-width: 80%;
+}
+
+.aboutText {
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.aboutText h2 {
+	width: 100%;
+	text-align: start;
+	margin-bottom: 1.5rem;
+}
+
+.aboutText p {
+	/* margin-left: 1rem; */
+}
+
+@media screen and (max-width:991px) {
+	.aboutSection {
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.aboutImg {
+		width: 100%;
+	}
+}
+
+/* .about,
+.aboutSection,
+.aboutDetail,
+.aboutImg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about {
+	padding-top: 3rem;
+	flex-direction: column;
+}
+
+.aboutSection {
+	width: 1500px;
+	max-width: 100%;
+	margin: 0 auto;
+	min-height: 60vh;
+	flex-direction: row-reverse;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.aboutDetail {
+	flex-direction: column;
+}
+
+.aboutDetail,
+.aboutImg {
+	padding: 1rem;
+	min-height: 40vh;
+	max-width: 750px;
+	width: 100%;
+}
+
+.aboutDetail p {
+	font-size: 1.2rem;
+}
+
+.aboutImg img {
+	max-width: 100%;
+}
+
+.aboutContact {
+	width: 100%;
+}
+
+@media screen and (max-width:991px) {
+	.about {
+		padding-top: 5rem;
+	}
+
+	.aboutSection {
+		padding-top: 2rem;
+		flex-direction: column;
+	}
+
+	.aboutDetail p {
+		font-size: 1.1rem;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.aboutSection {
+		padding: 1.5rem;
+	}
+
+	.aboutImg img {
+		max-width: 100%;
+	}
+
+	.contact_us {
+		padding-left: 2rem;
+	}
+
+	.aboutImg {
+		min-height: 40vh;
+	}
+
+	.keys {
+		padding-left: 1.5rem;
+	}
+}
+
+@media screen and (max-width:599px) {
+	.aboutSection {
+		padding: .75rem;
+		gap: 1rem;
+	}
+
+	.aboutDetail p {
+		font-size: 1rem;
+	}
+
+	.aboutDetail,
+	.aboutImg {
+		padding: .5rem;
+		min-height: 30vh;
+	}
+
+	.contact_us a {
+		padding: .75rem 1.75rem;
+		font-size: 1rem;
+	}
+
+	.about h2,
+	.contact_us {
+		padding: 0 1rem;
+		height: 3rem;
+	}
+}
+
+@media screen and (max-width:399px) {
+	.aboutImg {
+		min-height: 25vh;
+	}
+} */

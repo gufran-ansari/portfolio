@@ -1,0 +1,135 @@
+header {
+	background-color: var(--clr-body);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 80px;
+	min-width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	padding: 1rem 0;
+	transition: 0.5s ease-out;
+	border-bottom: 2px solid var(--clr-accent);
+}
+
+.navbar-wrapper a {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	text-decoration: none;
+}
+
+.navbar-wrapper img {
+	max-width: 55px;
+}
+
+.navbar-wrapper h4 {
+	padding-top: .5rem;
+	font-weight: var(--fw-500);
+	color: var(--clr-primary);
+	font-size: var(--fs-xl);
+}
+
+.mobile-nav-toggle {
+	display: none;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	padding: .5rem;
+}
+
+.mobile-nav-toggle .icon-close {
+	display: none;
+}
+
+.nav-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.75rem;
+	margin-top: 1rem;
+	width: 100%;
+}
+
+.nav-list li {
+	list-style-type: none;
+}
+
+.nav-list a {
+	text-decoration: none;
+	color: var(--clr-primary);
+	font-size: var(--fs-sm);
+	font-weight: var(--fw-500);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+	color: var(--clr-accent);
+}
+
+.nav-list li:active a {
+	color: var(--clr-accent);
+}
+
+@media screen and (max-width:1099px) {
+	.navbar-wrapper h4 {
+		font-size: var(--fs-lg);
+	}
+}
+
+@media screen and (max-width:992px) {
+	.navbar-wrapper img {
+		max-width: 45px;
+	}
+
+	.navbar-wrapper h4 {
+		display: none;
+	}
+
+	.primary-navigation {
+		display: none;
+		position: absolute;
+		padding: 1rem 0;
+		inset: 7rem 5% auto;
+		text-align: center;
+		background-color: var(--clr-light);
+		border-radius: 10px;
+		box-shadow: 0 5px .75em rgb(0, 0, 0, 0.35);
+	}
+
+	.btn-hide {
+		display: none;
+	}
+
+	.nav-list {
+		padding-top: 0.5rem;
+		display: grid;
+		justify-content: center;
+		gap: 2rem;
+		text-align: center;
+	}
+
+	.primary-navigation[data-visible] {
+		display: block;
+	}
+
+	.mobile-nav-toggle {
+		display: block;
+		cursor: pointer;
+		background: transparent;
+		border: 0;
+		padding: .5rem;
+	}
+
+	.mobile-nav-toggle .icon-close {
+		display: none;
+	}
+}
+
+
+@media screen and (max-width:768px) {}
+
+@media screen and (max-width:457px) {}
+
+@media screen and (max-width:349px) {}

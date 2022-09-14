@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+{% block content %}
+
+<main>
+	<section class="mh-90 home flex-center" id="home">
+		<div class="container">
+			<div class="card mb-3 bg-transparent border-0">
+				<div class="row g-5 flex-direction">
+					<div class="col-md">
+						<img src="{% static 'image/index/webdev.png' %}" class="img-fluid rounded-start" alt="Codezyners | Graphics Design & Web Development">
+					</div>
+					<div class="col-md flex-center">
+						<div class="card-body">
+							<h4 class="card-title text-uppercase">Explore creative world of graphics design and web development with <span class="clr-accent fw-semibold">Codezyners</span></h4>
+							<p class="card-text text-capitalize fs-sm mb-4">Let's discuss your goals, determine success and identify the problem to solve.</p>
+							<a href="#contact" class="button">Contact Us</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="mh-90 about flex-center" id="about">
+		<div class="container">
+			<div class="card mb-3 bg-transparent border-0">
+				<div class="card-header border-0 bg-transparent text-center">
+					<h4 class="text-uppercase fs-xl">About Us</h4>
+				</div>
+				<div class="row g-5 flex-direction flex-reverse">
+					<div class="col-md">
+						<img src="{% static 'image/index/designer.png' %}" class="img-fluid rounded-start" alt="Codezyners | Graphics Design & Web Development">
+					</div>
+					<div class="col-md flex-center">
+						<div class="card-body text-capitalize">
+							<h5 class="card-title">
+								<span class="clr-accent text-uppercase fw-semibold">Codezyners</span> is an Start-up Firm based in Mumbai, India.
+								We offers services in Graphic Design and Web Development.
+							</h5>
+							<br>
+							<p class="card-text fw-400">
+								We offer Graphic Design services for creating and Designing Logos, Business Cards,
+								<br> Visiting Cards, Invitation Cards, Brochures, Flyers, Banners, Posters, Book Covers,
+								<br> Resume Design, and Social Media Posts.
+								<br>
+								We also offer Web Development for Personal & Business Portfolio, Blog,
+								<br> E-Commerce, Booking Websites, MLM Websites, and WordPress Websites.
+								<br> We also can Re-Design your Existing Website with Old Design.
+							</p>
+							<br>
+							<a href="#reviews" class="button">Reviews</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="mh-90 services" id="services"></section>
+
+	<section class="mh-90 projects" id="projects"></section>
+
+	<section class="mh-90 reviews" id="reviews"></section>
+
+	<section class="mh-90 contact" id="contact"></section>
+
+</main>
+
+{% endblock content %}

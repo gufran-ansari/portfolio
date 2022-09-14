@@ -1,0 +1,12 @@
+.reviews {
+	display: flex;
+	flex-direction: column;
+}
+
+.reviews p {
+	text-transform: capitalize;
+}
+
+.row {
+	padding: 1rem;
+}

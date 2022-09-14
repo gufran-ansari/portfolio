@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About Us {% endblock title %}
+{% block content %}
+
+<section class="about" id="about">
+    <div class="header">
+        <h2>About Us</h2>
+    </div>
+    <div class="aboutSection">
+        <div class="aboutImg">
+            <img src="{% static 'image/index/about.png' %}" alt="">
+        </div>
+        <div class="aboutDetail">
+            <p>
+                Codezyners is a Indian based Startup Design and Development Company.
+                We have highly experienced and professional Designers and Developers in our team to fulfill your requirements.
+                <br><br>
+                We offers best quality of Graphic design, website design and website Development. <br><br>
+                Our Main Services are Logo Design, Brouchers Design, Flyers Design, Business Cars Design, Wedding Card Design, Visiting Card Design, 
+                Template Design, Website Design, Blog Website, Portfolio Website, Business Website, E-Commerce Website, Website Redesign, Hosting, 
+                Domain, Website Maintenance, SSL Certificates and much more.
+            </p>
+            <div class="buttons aboutContact">
+                <a href="/#contactUs">Contact Us</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock content %}

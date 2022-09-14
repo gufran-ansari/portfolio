@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta name="description" content="Graphic Design and Website Development in India. Graphic Design, Logo, Cards, Templates, Web Design, Cards, Portfolio, Blog, E Commerce Website | Codezyners.">
+		<meta charset="UTF-8" http-equiv="encoding">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="index,follow">
+		<meta name="keywords" content="Code, Codezyners, Graphic, Design, Website">
+		<title> {% block title %}{% endblock title %} | Graphic Design and Website Development in India. Graphic Design, Logo, Cards, Templates, Web Design, Cards, Portfolio, Blog, E Commerce Website - Codezyners.</title>
+
+		<!-- Icon in Browser -->
+		<link rel="icon" href="{% static 'image/index/initial.png' %}">
+
+		<!-- --------------------------------------------------------------------- Custom CSS --------------------------------------------------------------------- -->
+		<!-- Full Page CSS -->
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" media="all">
+
+		<!-- Section CSS -->
+		<link rel="stylesheet" href="{% static 'css/home.css' %}" media="all">
+		<link rel="stylesheet" href="{% static 'css/about.css' %}" media="all">
+		<link rel="stylesheet" href="{% static 'css/services.css' %}" media="all">
+		<link rel="stylesheet" href="{% static 'css/projects.css' %}" media="all">
+		<link rel="stylesheet" href="{% static 'css/reviews.css' %}" media="all">
+		<link rel="stylesheet" href="{% static 'css/contact.css' %}" media="all">
+
+		<!-- Other Pages -->
+		<link rel="stylesheet" href="{% static 'css/ourWork.css' %}" media="all">
+		<link rel="stylesheet" href="{% static 'css/quota.css' %}" media="all">
+		<link rel="stylesheet" href="{% static 'css/reviewForm.css' %}" media="all">
+
+		<!-- ------------------------------------------------------------------------ CDN --------------------------------------------------------------------- -->
+
+		<!-- Bootstrap -->
+		<!-- CSS only -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+		<!-- jQuery -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+		<!-- FontAwesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+		<!-- Popper.js (for Modals) -->
+
+
+		<!-- Fonts API -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600&display=swap" rel="stylesheet">
+
+		<!-- International Telephone CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js" referrerpolicy="no-referrer"></script>
+	</head>
+
+	<body>
+		{% url "index" as index %}
+		{% url "services" as services %}
+		{% url "about" as about %}
+		{% url "projects" as projects %}
+		{% url "signup" as signup %}
+
+		<header class="container">
+			<a href="{% url 'index' %}" class="logo">
+				<img src="{% static 'image/index/initial.png' %}" alt="Logo">
+				<h2>codezyners</h2>
+			</a>
+			<input type="checkbox" id="nav-toggle" class="nav-toggle">
+			<div class="nav-menu">
+				<ul>
+					<li class="navlinks {% if request.path == index %} active {% endif %}">
+						<a href="/#home">Home</a>
+					<li class="navlinks {% if request.path == about %} active {% endif %}">
+						<a href="/#about">About Us</a>
+					</li>
+					<li class="navlinks {% if request.path == services %} active {% endif %}">
+						<a href="/#services">Services</a>
+					</li>
+					<li class="navlinks {% if request.path == projects %} active {% endif %}">
+						<a href="/#projects">Projects</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+
+
+		{% for message in messages %}
+		<div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center message" role="alert">
+			<strong>{{ message }}</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		{% endfor %}
+
+
+		<div>
+			{% block content %}
+			{% endblock content %}
+		</div>
+
+		<!-- Footer -->
+		<footer>
+			<!-- Copyright Text -->
+			<div class="copyright">
+				<h5>&copy; Copyright 2022 - Codezyners</h5>
+			</div>
+
+			<!-- Modal Term and Condition-->
+			<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<div class="modal-dialog modal-lg modal-dialog-centered " role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle">Terms & Conditions</h5>
+							<button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body terms">
+							<div class="conditions">
+								<p>
+									1. After agreeing to the Quotation, the Client has to pay 30% - 50% of the Total Price in Advance, and the remaining will be paid when the work is done.
+									<br><br>
+									2. After the website is live, the Client has to pay the remaining amount within 3 Days.
+									<br><br>
+									3. If the Remaining Amount is not paid by the Client within 15 Days, the Website Will Be shut down.
+									<br><br>
+									4. If the Client wasn't able to pay then Codezyners and Team can Apply a Penalty of 10% of Entire Amount per Day after 15 Days.
+									<br><br>
+									5. If the client wants to cancel, for full refunds it should be canceled within 3 days. After 3 Days, 70% of the amount will be refunded.
+									<br><br>
+									6. Client Have to purchase Payment Gateway Integrations when or if required.
+								</p>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Custom JS -->
+		<script src="{% static 'js/navbar.js' %}"></script>
+		<script src="{% static 'js/phone.js' %}"></script>
+		<script src="{% static 'js/typewriter.js' %}"></script>
+
+
+
+		<!-- Bootstrap JS -->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Phone Script -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js" referrerpolicy="no-referrer"></script>
+	</body>
+
+</html>

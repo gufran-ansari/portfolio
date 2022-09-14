@@ -1,0 +1,45 @@
+.homeSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0 2rem;
+}
+
+.homeImg,
+.homeText {
+    max-width: 80%;
+}
+
+.homeImg img {
+    width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    .homeSection {
+        flex-direction: column;
+        gap: 3rem;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .homeSection {
+        margin-top: 3rem;
+    }
+
+    .homeImg,
+    .homeText {
+        min-width: 80%;
+    }
+
+    .homeImg {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .homeSection {
+        gap: 5rem;
+    }
+}

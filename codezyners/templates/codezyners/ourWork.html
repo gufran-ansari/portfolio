@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Projects {% endblock title %}
+{% block content %}
+
+
+
+
+<div class="pagination">
+
+    {% if pageList.has_previous == True %}
+    <a href="page=1" class="btn btn-outline-dark last">&laquo; First</a>
+    <a href="?page={{ pageList.previous_page_number }}" class="btn btn-outline-dark">{{ pageList.previous_page_number }}</a>
+    {% endif %}
+
+    {% for current_page in pageList.paginator.page_range %}
+
+    {% if pageList.number == current_page %}
+    <a href="?page={{ current_page }}" class="btn btn-dark">{{ current_page }}</a>
+
+    {% elif num > pageList.number|add:'-3' and num < pageList.number|add:'3' %}
+
+    <a href="?page={{ current_page }}" class="btn btn-outline-dark">{{ current_page }}</a>
+    {% endif %}
+
+    {% endfor %}
+
+    {% if pageList.has_next == True %}
+    <a href="?page={{ pageList.next_page_number }}" class="btn btn-outline-dark">{{ pageList.next_page_number }}</a>
+    <a href="?page={{ pageList.paginator.num_pages }}" class="btn btn-outline-dark next">Last &raquo;</a>
+    {% endif %}
+
+</div>
+
+{% endblock content %}
