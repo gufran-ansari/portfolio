@@ -35,6 +35,10 @@
 		<!-- International Telephone CDN -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css" referrerpolicy="no-referrer" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js" referrerpolicy="no-referrer"></script>
+		
+		<!-- Scroll Tracker JS -->
+		<script src="{% static 'js/scroll.js' %}" type="module" defer></script>
+		
 	</head>
 
 	<body>
@@ -45,12 +49,14 @@
 		{% url "projects" as projects %}
 		{% url "contact" as contact %}
 
+		<div class="scroll-tracker"></div>
+
 		<header class="primary-header flex-center">
 			<div class="container">
 				<div class="navbar-wrapper flex-between">
 					<a href="{% url 'index' %}" class="logo">
 						<img src="{% static 'image/index/initial.png' %}" alt="Codezyners Logo">
-						<h4 class="text-uppercase">codezyners</h4>
+						<h2 class="text-uppercase fw-semibold clr-accent">codezyners</h2>
 					</a>
 					<button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
 						<img class="icon-ham" src="{% static 'image/nav-ham.svg' %}" width="30" height="30" alt="" aria-hidden="true">
@@ -60,77 +66,40 @@
 					<nav class="primary-navigation flex-center" id="primary-navigation">
 						<ul aria-label="Primary" role="list" class="nav-list flex-center">
 							<li class="{% if request.path == index %} active {% endif %}">
-								<a href="{% url 'index' %}">Home</a>
+								<a href="/#home">Home</a>
 							</li>
 							<li class="{% if request.path == about %} active {% endif %}">
-								<a href="#about">About</a>
+								<a href="/#about">About</a>
 							</li>
 							<li class="{% if request.path == services %} active {% endif %}">
-								<a href="#services">Services</a>
+								<a href="/#services">Services</a>
 							</li>
 							<li class="{% if request.path == projects %} active {% endif %}">
-								<a href="#projects">Projects</a>
+								<a href="/#projects">Projects</a>
 							</li>
 							<li class="{% if request.path == contact %} active {% endif %}">
-								<a href="#contact">Contact</a>
+								<a href="/#contact">Contact</a>
 							</li>
 						</ul>
 					</nav>
-					<button class="button btn-hide">Get Started</button>
+					<button class="button btn-sm btn-hide">Get Started</button>
 				</div>
 			</div>
 		</header>
 
-		<div class="h-100">
+		<div>
 			{% block content %}
 			{% endblock content %}
 		</div>
 
 		<!-- Footer -->
-		<footer>
-			<!-- Copyright Text -->
-			<div class="copyright">
-				<h5>&copy; Copyright 2022 - Codezyners</h5>
-			</div>
-
-			<!-- Modal Term and Condition-->
-			<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-				<div class="modal-dialog modal-lg modal-dialog-centered " role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLongTitle">Terms & Conditions</h5>
-							<button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body terms">
-							<div class="conditions">
-								<p>
-									1. After agreeing to the Quotation, the Client has to pay 30% - 50% of the Total Price in Advance, and the remaining will be paid when the work is done.
-									<br><br>
-									2. After the website is live, the Client has to pay the remaining amount within 3 Days.
-									<br><br>
-									3. If the Remaining Amount is not paid by the Client within 15 Days, the Website Will Be shut down.
-									<br><br>
-									4. If the Client wasn't able to pay then Codezyners and Team can Apply a Penalty of 10% of Entire Amount per Day after 15 Days.
-									<br><br>
-									5. If the client wants to cancel, for full refunds it should be canceled within 3 days. After 3 Days, 70% of the amount will be refunded.
-									<br><br>
-									6. Client Have to purchase Payment Gateway Integrations when or if required.
-								</p>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
+		<footer class="bgclr-text flex-center">
+			<h5 class="text-center clr-light fw-semibold">&copy; Copyright 2022 All Rights Reserved - <span class="fw-bold text-uppercase">Codezyners</span></h5>
 		</footer>
 
 		<!-- Custom JS -->
-		<script src="{% static 'js/navbar.js' %}"></script>
 		<script src="{% static 'js/phone.js' %}"></script>
+		<script src="{% static 'js/navbar.js' %}"></script>
 		<script src="{% static 'js/typewriter.js' %}"></script>
 	</body>
 

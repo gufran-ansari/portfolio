@@ -4,32 +4,61 @@
 {% block content %}
 
 
+<section class="ourWork mh-100 flex-center">
+    <div class="container">
+        <div class="cateogry-btns">
+            <ul class="flex-center g-2">
+                <li class="active">
+                    <a class="button" href="{% url 'projects' %}">All Projects</a>
+                </li>
+                {% for category in categories %}
+                <li onclick="active">
+                    <a class="button" href="{% url 'projects' %}?category={{ category.category_name }}">{{ category.category_name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="row g-3 my-3">
+            {% for page in pageList %}
+            <div class="col-lg-3">
+                <div class="card">
+                    <a href="{{ page.link }}">
+                        <img src="{{ page.projectImage.url }}" alt="{{ page.project_name }}" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="pagination text-center">
+
+            {% if pageList.has_previous == True %}
+            <a href="page=1" class="btn btn-outline-dark last">&laquo; First</a>
+            <a href="?page={{ pageList.previous_page_number }}" class="btn btn-outline-dark">{{ pageList.previous_page_number }}</a>
+            {% endif %}
+
+            {% for current_page in pageList.paginator.page_range %}
+
+            {% if pageList.number == current_page %}
+            <a href="?page={{ current_page }}" class="btn btn-dark">{{ current_page }}</a>
+
+            {% elif num > pageList.number|add:'-3' and num < pageList.number|add:'3' %}
+
+            <a href="?page={{ current_page }}" class="btn btn-outline-dark">{{ current_page }}</a>
+            {% endif %}
+
+            {% endfor %}
+
+            {% if pageList.has_next == True %}
+            <a href="?page={{ pageList.next_page_number }}" class="btn btn-outline-dark">{{ pageList.next_page_number }}</a>
+            <a href="?page={{ pageList.paginator.num_pages }}" class="btn btn-outline-dark next">Last &raquo;</a>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
 
 
-<div class="pagination">
-
-    {% if pageList.has_previous == True %}
-    <a href="page=1" class="btn btn-outline-dark last">&laquo; First</a>
-    <a href="?page={{ pageList.previous_page_number }}" class="btn btn-outline-dark">{{ pageList.previous_page_number }}</a>
-    {% endif %}
-
-    {% for current_page in pageList.paginator.page_range %}
-
-    {% if pageList.number == current_page %}
-    <a href="?page={{ current_page }}" class="btn btn-dark">{{ current_page }}</a>
-
-    {% elif num > pageList.number|add:'-3' and num < pageList.number|add:'3' %}
-
-    <a href="?page={{ current_page }}" class="btn btn-outline-dark">{{ current_page }}</a>
-    {% endif %}
-
-    {% endfor %}
-
-    {% if pageList.has_next == True %}
-    <a href="?page={{ pageList.next_page_number }}" class="btn btn-outline-dark">{{ pageList.next_page_number }}</a>
-    <a href="?page={{ pageList.paginator.num_pages }}" class="btn btn-outline-dark next">Last &raquo;</a>
-    {% endif %}
-
-</div>
 
 {% endblock content %}

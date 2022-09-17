@@ -1,11 +1,8 @@
-from django.http.response import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.core.mail import send_mail
-from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger, InvalidPage
-from .models import Quotation, Category, Project, Contact, ClientReview, Service
+from .models import Category, Project, Contact, ClientReview, Service
 # Create your views here.
 
 
@@ -39,10 +36,6 @@ def index(request):
     }
 
     return render(request, "codezyners/index.html", context)
-
-
-def about(request):
-    return render(request, "codezyners/about.html")
 
 
 def reviews(request):
@@ -108,29 +101,3 @@ def ourProjects(request, *args, **kwargs):
     }
 
     return render(request, "codezyners/ourWork.html", context)
-
-
-def quota(request):
-    ourServices = Service.objects.all()
-    if request.method == "POST":
-        name = request.POST['name']
-        phone = request.POST['phone']
-        email = request.POST['email']
-        service = request.POST['service']
-        service_desc = request.POST['service_desc']
-        approxBudget = request.POST['approxBudget']
-
-        quota = Quotation(name=name)
-        quota.phone = phone
-        quota.email = email
-        quota.service = service
-        quota.service_desc = service_desc
-        quota.approxBudget = approxBudget
-
-        quota.save()
-        messages.success(
-            request, "Your Quotation Has Been Submitted Successfully.")
-        return redirect("quota")
-
-    context = {"ourServices": ourServices}
-    return render(request, "codezyners/quota.html", context)

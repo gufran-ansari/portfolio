@@ -6,8 +6,8 @@ from django.utils import timezone
 # Create your models here.
 
 CATEGORIES = [
-    ("Graphic Design", "Graphic Design"),
-    ("Web Development", "Web Development"),
+    ("Graphic Design", "design"),
+    ("Web Development", "web-dev"),
 ]
 
 SERVICES = [
@@ -86,17 +86,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"Message from {self.name} at {self.timestamp}"
-
-
-class Quotation(models.Model):
-    name = models.CharField(max_length=255)
-    phone = models.CharField(max_length=15)
-    email = models.EmailField(max_length=100)
-    service = models.CharField(max_length=100, choices=SERVICES)
-    quantity = models.CharField(max_length=255)
-    approxBudget = models.CharField(max_length=255)
-    service_desc = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.pk}. {self.name}"

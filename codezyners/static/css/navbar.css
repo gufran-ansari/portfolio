@@ -1,16 +1,26 @@
 header {
-	background-color: var(--clr-body);
+	background-color: var(--clr-light);
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	height: 80px;
+	height: 5rem;
 	min-width: 100%;
 	position: fixed;
 	top: 0;
 	z-index: 999;
 	padding: 1rem 0;
 	transition: 0.5s ease-out;
-	border-bottom: 2px solid var(--clr-accent);
+}
+
+/* Scroll Tracker  */
+.scroll-tracker {
+	position: fixed;
+	width: 100%;
+	height: 5px;
+	inset: 5rem 0 auto;
+	z-index: 999;
+	transform-origin: left;
+	background-color: var(--clr-accent);
 }
 
 .navbar-wrapper a {
@@ -24,11 +34,10 @@ header {
 	max-width: 55px;
 }
 
-.navbar-wrapper h4 {
+.navbar-wrapper h2 {
 	padding-top: .5rem;
-	font-weight: var(--fw-500);
-	color: var(--clr-primary);
-	font-size: var(--fs-xl);
+	font-weight: var(--fw-700);
+	font-size: var(--fs-xxl);
 }
 
 .mobile-nav-toggle {
@@ -43,7 +52,8 @@ header {
 	display: none;
 }
 
-.nav-list {
+.primary-navigation ul {
+	list-style: none;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -52,29 +62,49 @@ header {
 	width: 100%;
 }
 
-.nav-list li {
-	list-style-type: none;
-}
-
-.nav-list a {
+.primary-navigation li a {
+	font-size: 1.1rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 	text-decoration: none;
 	color: var(--clr-primary);
 	font-size: var(--fs-sm);
 	font-weight: var(--fw-500);
+	transition: all 250ms ease-in-out;
 }
 
-.nav-list a:hover,
-.nav-list a:focus {
+.primary-navigation li.active a,
+.primary-navigation li a:hover {
 	color: var(--clr-accent);
 }
 
-.nav-list li:active a {
-	color: var(--clr-accent);
+.primary-navigation li a::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: -10%;
+	width: 0%;
+	height: 3px;
+	transition: all 300ms;
+	transform-origin: 50% 50%;
+	transform: translateX(-50) scaleX(0);
+	-webkit-transform-origin: 50% 50%;
+	-webkit-transform: translateX(-50) scaleX(0);
 }
 
-@media screen and (max-width:1099px) {
-	.navbar-wrapper h4 {
-		font-size: var(--fs-lg);
+.primary-navigation li a::after {
+	background-color: var(--clr-accent);
+}
+
+.primary-navigation li.active a {
+	border-bottom: 3px solid var(--clr-accent);
+}
+
+@media screen and (max-width:1199px) {
+	.navbar-wrapper h2 {
+		font-size: var(--fs-xl);
 	}
 }
 
@@ -83,7 +113,7 @@ header {
 		max-width: 45px;
 	}
 
-	.navbar-wrapper h4 {
+	.navbar-wrapper h2 {
 		display: none;
 	}
 
@@ -102,7 +132,7 @@ header {
 		display: none;
 	}
 
-	.nav-list {
+	.primary-navigation ul {
 		padding-top: 0.5rem;
 		display: grid;
 		justify-content: center;

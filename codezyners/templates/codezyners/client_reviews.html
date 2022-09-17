@@ -4,7 +4,36 @@
 {% block content %}
 
 
-
+<section class="client_reviews mh-100 flex-center" id="client_reviews">
+	<div class="container">
+		<div class="card-header bg-transparent w-100 mb-5">
+			<h2 class="fs-xxl text-uppercase fw-bold text-center clr-accent">Testimonials</h2>
+			<h6 class="fs-sm text-uppercase fw-bold text-center clr-primary">What Our Clients Say About Us</h6>
+		</div>
+		<div class="row g-4">
+			{% for reviews in client_reviews %}
+			<div class="col-md-4 text-center">
+				<div class="card h-100 p-4">
+					<div class="card-img w-100">
+						<img class="img-fluid rounded-circle" src="{% static 'image/index/user.png' %}" alt="User's Testimonial Review">
+					</div>
+					<div class="card-text text-capitalize">
+						<h4 class="fs-md text-uppercase fw-bold clr-accent">{{ reviews.client_name }}</h4>
+						<p class="text-muted fs-xs">{{ reviews.review_date }}</p>
+						<p class="clr-primary">
+							<i class="fas fa-quote-left pe-2"></i>
+							{{ reviews.client_review }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		
+		<div class="pt-4 text-center">
+			<a href="{% url 'addReview' %}" class="button btn-sm">Add A Review</a>
+		</div>
+	</div>
+</section>
 
 
 {% endblock content %}

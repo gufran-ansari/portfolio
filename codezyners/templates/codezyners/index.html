@@ -4,18 +4,18 @@
 {% block content %}
 
 <main>
-	<section class="mh-90 home flex-center" id="home">
+	<section class="home mh-100 flex-center hidden py-5" id="home">
 		<div class="container">
 			<div class="card mb-3 bg-transparent border-0">
-				<div class="row g-5 flex-direction">
+				<div class="row g-3 flex-direction">
 					<div class="col-md">
-						<img src="{% static 'image/index/webdev.png' %}" class="img-fluid rounded-start" alt="Codezyners | Graphics Design & Web Development">
+						<img src="{% static 'image/index/webdev.png' %}" class="img-fluid" alt="Codezyners | Graphics Design & Web Development">
 					</div>
 					<div class="col-md flex-center">
 						<div class="card-body">
 							<h4 class="card-title text-uppercase">Explore creative world of graphics design and web development with <span class="clr-accent fw-semibold">Codezyners</span></h4>
-							<p class="card-text text-capitalize fs-sm mb-4">Let's discuss your goals, determine success and identify the problem to solve.</p>
-							<a href="#contact" class="button">Contact Us</a>
+							<p class="card-text text-capitalize mb-4 fw-regular">Let's discuss your goals, determine success and identify the problem to solve.</p>
+							<a href="#contact" class="button btn-sm">Contact Us</a>
 						</div>
 					</div>
 				</div>
@@ -23,34 +23,34 @@
 		</div>
 	</section>
 
-	<section class="mh-90 about flex-center" id="about">
+	<section class="about mh-100 flex-center hidden my-2" id="about">
 		<div class="container">
 			<div class="card mb-3 bg-transparent border-0">
-				<div class="card-header border-0 bg-transparent text-center">
-					<h4 class="text-uppercase fs-xl">About Us</h4>
-				</div>
-				<div class="row g-5 flex-direction flex-reverse">
-					<div class="col-md">
-						<img src="{% static 'image/index/designer.png' %}" class="img-fluid rounded-start" alt="Codezyners | Graphics Design & Web Development">
+				<div class="row g-3 flex-direction flex-reverse">
+					<div class="col-lg-6">
+						<img src="{% static 'image/index/designer.png' %}" class="img-fluid" alt="Codezyners | Graphics Design & Web Development">
 					</div>
-					<div class="col-md flex-center">
+					<div class="col-lg-6 flex-center">
 						<div class="card-body text-capitalize">
-							<h5 class="card-title">
-								<span class="clr-accent text-uppercase fw-semibold">Codezyners</span> is an Start-up Firm based in Mumbai, India.
+							<div class="card-header border-0 bg-transparent text-center my-5">
+								<h2 class="text-uppercase fw-bold text-center clr-accent">About Us</h2>
+							</div>
+							<h6 class="card-title text-uppercase">
+								<span class="clr-accent fw-semibold">Codezyners</span> is an Start-up Firm based in Mumbai, India.
 								We offers services in Graphic Design and Web Development.
-							</h5>
+							</h6>
 							<br>
 							<p class="card-text fw-400">
-								We offer Graphic Design services for creating and Designing Logos, Business Cards,
+								We offer Graphic Design services such as Designing Logos, Business Cards,
 								<br> Visiting Cards, Invitation Cards, Brochures, Flyers, Banners, Posters, Book Covers,
 								<br> Resume Design, and Social Media Posts.
 								<br>
 								We also offer Web Development for Personal & Business Portfolio, Blog,
 								<br> E-Commerce, Booking Websites, MLM Websites, and WordPress Websites.
-								<br> We also can Re-Design your Existing Website with Old Design.
+								<br> We also can Re-Design your Website with Old Design.
 							</p>
 							<br>
-							<a href="#reviews" class="button">Reviews</a>
+							<a href="#reviews" class="button btn-sm">Read More</a>
 						</div>
 					</div>
 				</div>
@@ -58,14 +58,235 @@
 		</div>
 	</section>
 
-	<section class="mh-90 services" id="services"></section>
+	<section class="services mh-100 flex-center hidden py-5" id="services">
+		<div class="container">
+			<div class="card-header bg-transparent w-100 mb-5">
+				<h2 class="text-uppercase fw-bold text-center clr-accent">Our Services</h2>
+				<h6 class="text-uppercase fw-bold text-center clr-primary">Our Speciality</h6>
+			</div>
+			<div class="row g-3">
+				<div class="col-lg-4">
+					<div class="card h-100">
+						<img class="img-fluid" src="{% static 'image/services/graphic-design.png' %}" alt="Graphic Design">
+						<div class="card-text">
+							<h5 class="text-center text-uppercase fw-semibold clr-accent">Graphics Design</h5>
+							<div class="flex-center">
+								<ul class="clr-primary">
+									<li>Logo Design</li>
+									<li>Flyer Design</li>
+									<li>Business Card</li>
+									<li>Banner Design</li>
+									<li>Resume Design</li>
+									<li>Brochure Design</li>
+									<li>Social Media Post</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card h-100">
+						<img class="img-fluid" src="{% static 'image/services/web-design.png' %}" alt="Graphic Design">
+						<div class="card-text">
+							<h5 class="text-center text-uppercase fw-semibold clr-accent">Website Design</h5>
+							<div class="flex-center">
+								<ul class="clr-primary">
+									<li>Website Design</li>
+									<li>Website Re-Design</li>
+									<li>Responsive Design</li>
+									<li>Website Templates</li>
+									<li>Web Ad Design</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card h-100">
+						<img class="img-fluid" src="{% static 'image/services/web-dev.png' %}" alt="Graphic Design">
+						<div class="card-text">
+							<h5 class="text-center text-uppercase fw-semibold clr-accent">Web Development</h5>
+							<div class="flex-center">
+								<ul class="clr-primary">
+									<li>Blog Website</li>
+									<li>Booking System</li>
+									<li>Business Website</li>
+									<li>Portfolio Website</li>
+									<li>WordPress Websites</li>
+									<li>E-Commerce Website</li>
+									<li>Affiliate Marketing</li>
+									<li>Multi-Level Marketing</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<section class="mh-90 projects" id="projects"></section>
+	<section class="projects mh-100 flex-center hidden py-5" id="projects">
+		<div class="container">
+			<div class="card-header bg-transparent w-100 mb-5">
+				<h2 class="text-uppercase fw-bold text-center clr-accent">Projects</h2>
+				<h6 class="text-uppercase fw-bold text-center clr-primary">Our Work</h6>
+			</div>
+			<div class="row my-4 g-3">
+				{% for project in work|slice:":4" %}
+				<div class="col-lg-3">
+					<div class="card h-100">
+						<img src="{{ project.projectImage.url }}" alt="{{ project.project_name }}" class="img-fluid">
+						<div class="card-footer bg-transparent">
+							<h6 class="text-uppercase fw-bold text-center clr-primary mt-2">{{ project.project_name }}</h6>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="mt-2 text-center">
+				<a href="{% url 'projects' %}" class="button btn-sm">View More &#10095;</a>
+			</div>
+		</div>
+	</section>
 
-	<section class="mh-90 reviews" id="reviews"></section>
+	<section class="reviews mh-100 flex-center hidden py-5" id="reviews">
+		<div class="container">
+			<div class="card-header bg-transparent w-100 mb-5">
+				<h2 class="text-uppercase fw-bold text-center clr-accent">Testimonials</h2>
+				<h6 class="text-uppercase fw-bold text-center clr-primary">What Our Clients Say About Us</h6>
+			</div>
+			<div class="row my-4 g-3">
+				{% for review in reviews|slice:":3" %}
+				<div class="col-lg-4 text-center">
+					<div class="card h-100 p-4">
+						<div class="card-img w-100">
+							<img class="img-fluid rounded-circle" src="{% static 'image/index/user.png' %}" alt="User's Testimonial Review">
+						</div>
+						<div class="card-text text-capitalize">
+							<h5 class="text-uppercase fw-bold clr-accent">{{ review.client_name }}</h5>
+							<span class="text-muted">{{ review.review_date }}</span>
+							<p class="clr-primary my-2">
+								<i class="fas fa-quote-left pe-2"></i>
+								{{ review.client_review }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="w-100 text-center mt-2">
+				<a href="{% url 'reviews' %}" class="button btn-sm">Read More &#10095;</a>
+			</div>
+		</div>
+	</section>
 
-	<section class="mh-90 contact" id="contact"></section>
+	<section class="contact mh-100 flex-center hidden py-5" id="contact">
+		<div class="container">
+			<div class="card-header bg-transparent w-100 mb-5">
+				<h2 class="text-uppercase fw-bold text-center clr-accent">Contact Us</h2>
+			</div>
+			<div class="row g-3">
+				<div class="col-md-5">
+					<!-- Work Online -->
+					<div class="work mb-3">
+						<div class="card g-3">
+							<div class="card-header bg-transparent">
+								<h4 class="fw-semibold clr-primary mt-2">Work With Us</h4>
+							</div>
+							<div class="card-body g-3">
+								<div class="row">
+									<div class="w-100 text-center">
+										<a class="clr-light m-2" href="https://www.fiverr.com/gufran_ansari10?up_rollout=true" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/fiverr.png' %}" alt="Codezyners Fiverr">
+										</a>
+										<a class="clr-light m-2" href="https://www.upwork.com/freelancers/~0196fec35b87b99045" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/upwork.png' %}" alt="Codezyners Upwork">
+										</a>
+										<a class="clr-light m-2" href="https://dribbble.com/codezyners" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/dribble.png' %}" alt="Codezyners Dribble">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Social Media -->
+					<div class="social">
+						<div class="card g-3">
+							<div class="card-header bg-transparent">
+								<h4 class="fw-semibold clr-primary mt-2">Connect With Us</h4>
+							</div>
+							<div class="card-body g-3">
+								<div class="row">
+									<div class="w-100 text-center">
+										<a class="clr-light m-2" href="mailto:codezyners@gmail.com" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/gmail.png' %}" alt="Codezyners Gmail">
+										</a>
+										<a class="clr-light m-2" href="https://www.facebook.com/codezynerss" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/face-book.png' %}" alt="Codezyners Facebook">
+										</a>
+										<a class="clr-light m-2" href="https://instagram.com/codezyners" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/insta.png' %}" alt="Codezyners Instagram">
+										</a>
+										<a class="clr-light m-2" href="https://www.github.com/codezyners" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/github.png' %}" alt="Codezyners Github">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Contact Form -->
+				<div class="col-md-7">
+					<div class="card">
+						<div class="card-header bg-transparent">
+							<h4 class="fw-semibold clr-primary mt-2">Leave Us A Message</h4>
+						</div>
+						<div class="card-body">
+							<form action="" method="post">
+								{% csrf_token %}
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="name">Full Name</label>
+										<input type="text" name="name" class="form-control" placeholder="Full Name" required>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="email">Email</label>
+										<input type="email" name="email" class="form-control" placeholder="Email Address" required>
+									</div>
+								</div>
+								<div class="row my-1">
+									<div class="form-group col-md-6">
+										<label for="phone">Contact <small class="text-white-50">(Optional)</small></label> <br>
+										<input type="tel" class="form-control" name=phone placeholder="Phone Number" id="phone">
+										<div class="msg">
+											<span id="valid-msg" class="hide">Valid</span>
+											<span id="error-msg" class="hide">Error</span>
+										</div>
+									</div>
+									<div class="form-group col-md-6 my-1">
+										<label for="comapany">Comapany/Organisation/</label>
+										<input type="text" name="comapany" class="form-control" placeholder="Comapany Name">
+									</div>
+								</div>
+								<div class="form-group my-1">
+									<label for="message">Your Message</label>
+									<textarea name="message" class="form-control" placeholder="Your Message" cols="30" rows="3" required></textarea>
+								</div>
+								<div class="mt-2 float-end">
+									<input type="submit" class="button btn-sm" value="Send Message">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 </main>
+
 
 {% endblock content %}
