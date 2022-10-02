@@ -19,19 +19,22 @@
             </ul>
         </div>
 
-        <div class="row g-3 my-3">
+        <div class="row g-3 my-3 text-center">
             {% for page in pageList %}
             <div class="col-lg-3">
                 <div class="card">
-                    <a href="{{ page.link }}">
-                        <img src="{{ page.projectImage.url }}" alt="{{ page.project_name }}" class="img-fluid">
-                    </a>
+                    <img src="{{ page.projectImage.url }}" alt="{{ page.project_name }}" class="img-fluid">
+                    <div class="card-footer bg-transparent project-detail">
+                        <p class="h5 clr-accent">{{ page.project_name }}</p>
+                    </div>
                 </div>
             </div>
             {% endfor %}
         </div>
 
-        <div class="pagination text-center">
+        <!-- Pagination -->
+        <!-- 
+            <div class="pagination text-center">
 
             {% if pageList.has_previous == True %}
             <a href="page=1" class="btn btn-outline-dark last">&laquo; First</a>
@@ -55,7 +58,8 @@
             <a href="?page={{ pageList.paginator.num_pages }}" class="btn btn-outline-dark next">Last &raquo;</a>
             {% endif %}
 
-        </div>
+        </div> 
+    -->
     </div>
 </section>
 

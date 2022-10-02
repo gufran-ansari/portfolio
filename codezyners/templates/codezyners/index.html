@@ -13,7 +13,7 @@
 					</div>
 					<div class="col-md flex-center">
 						<div class="card-body">
-							<h4 class="card-title text-uppercase">Explore creative world of graphics design and web development with <span class="clr-accent fw-semibold">Codezyners</span></h4>
+							<h4 class="card-title text-uppercase">Explore the creative world of graphics design and web development with <span class="clr-accent fw-semibold">Codezyners</span></h4>
 							<p class="card-text text-capitalize mb-4 fw-regular">Let's discuss your goals, determine success and identify the problem to solve.</p>
 							<a href="#contact" class="button btn-sm">Contact Us</a>
 						</div>
@@ -23,7 +23,9 @@
 		</div>
 	</section>
 
-	<section class="about mh-100 flex-center my-2" id="about">
+
+	<!-- REMOVE ABOUT US AND ADD WHAT WE DO -->
+	<section class="about mh-75 flex-center my-2" id="about">
 		<div class="container hidden">
 			<div class="card mb-3 bg-transparent border-0">
 				<div class="row g-3 flex-direction flex-reverse">
@@ -50,7 +52,7 @@
 								<br> We also can Re-Design your Website with Old Design.
 							</p>
 							<br>
-							<a href="#reviews" class="button btn-sm">Read More</a>
+							<a href="#reviews" class="button btn-sm">Read More <i class="fa-solid fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -133,9 +135,9 @@
 			</div>
 			<!-- SWIPER JS -->
 			<div class="section-border">
-				<div class="projects-container swiper">
-					<div class="swiper-wrapper project-content text-center">
-						{% for project in work %}
+				<div class="project-container swiper">
+					<div class="swiper-wrapper project-content text-center px-3">
+						{% for project in work|slice:"6" %}
 						<div class="card project-card swiper-slide">
 							<img class="card-img-top img-fluid" src="{{ project.projectImage.url }}" alt="{{ project.project_name }}">
 							<div class="card-footer bg-transparent project-detail">
@@ -145,8 +147,12 @@
 						{% endfor %}
 					</div>
 					<!-- Swiper Arrow -->
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next">
+						<i class="fa-solid fa-angle-right"></i>
+					</div>
+					<div class="swiper-button-prev">
+						<i class="fa-solid fa-angle-left"></i></i>
+					</div>
 				</div>
 			</div>
 
@@ -157,37 +163,49 @@
 		</div>
 	</section>
 
-	<section class="reviews mh-100 flex-center py-5" id="reviews">
+	<section class="reviews mh-75 flex-center py-5" id="reviews">
 		<div class="container hidden">
 			<div class="text-uppercase text-center card-header bg-transparent w-100 mb-5">
 				<h2 class="fw-bold clr-accent">Testimonials</h2>
 				<h6 class="clr-primary">What Our Clients Say About Us</h6>
 			</div>
-			<div class="row my-4 g-3">
-				{% for review in reviews|slice:":4" %}
-				<div class="col-lg-3">
-					<div class="card h-100 text-center">
-						<div class="card-img">
-							<img class="img-fluid card-img-top" src="{% static 'image/index/user.png' %}" alt="User's Testimonial Review">
+
+			<div class="section-border">
+				<div class="review-container swiper">
+					<div class="swiper-wrapper review-content text-center px-3">
+						{% for review in reviews|slice:":6" %}
+						<div class="card review-card swiper-slide h-100 text-center">
+							<div class="card-img">
+								<img class="img-fluid card-img-top" src="{% static 'image/index/user.png' %}" alt="User's Testimonial Review">
+							</div>
+							<div class="card-text text-capitalize px-4">
+								<h6 class="text-uppercase fw-bold clr-accent">{{ review.client_name }}</h6>
+								<span class="text-muted">{{ review.review_date }}</span>
+								<p class="clr-primary my-2">
+									<i class="fa-solid fa-ditto"></i>
+									{{ review.client_review }}
+									<i class="fa-solid fa-ditto"></i>
+								</p>
+							</div>
 						</div>
-						<div class="card-text text-capitalize px-4">
-							<h6 class="text-uppercase fw-bold clr-accent">{{ review.client_name }}</h6>
-							<span class="text-muted">{{ review.review_date }}</span>
-							<p class="clr-primary my-2">
-								<i class="fas fa-quote-left pe-2"></i>
-								{{ review.client_review }}</p>
-						</div>
+						{% endfor %}
+					</div>
+					<!-- Swiper Arrow -->
+					<div class="swiper-button-next">
+						<i class="fa-solid fa-angle-right"></i>
+					</div>
+					<div class="swiper-button-prev">
+						<i class="fa-solid fa-angle-left"></i></i>
 					</div>
 				</div>
-				{% endfor %}
 			</div>
 			<div class="w-100 text-center mt-2">
-				<a href="{% url 'reviews' %}" class="button btn-sm">Read More &#10095;</a>
+				<a href="{% url 'reviews' %}" class="button btn-sm">Read More <i class="fa-solid fa-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>
 
-	<section class="contact mh-80 flex-center py-5" id="contact">
+	<section class="contact mh-75 flex-center py-5" id="contact">
 		<div class="container hidden">
 			<div class="card-header bg-transparent w-100 mb-5">
 				<h2 class="text-uppercase fw-bold text-center clr-accent">Contact Us</h2>
@@ -198,7 +216,7 @@
 					<div class="work mb-3">
 						<div class="card g-3">
 							<div class="card-header bg-transparent">
-								<h4 class="fw-semibold clr-primary mt-2">Work With Us</h4>
+								<h5 class=" clr-primary mt-2">Work With Us</h4>
 							</div>
 							<div class="card-body g-3">
 								<div class="row">
@@ -222,7 +240,7 @@
 					<div class="social">
 						<div class="card g-3">
 							<div class="card-header bg-transparent">
-								<h4 class="fw-semibold clr-primary mt-2">Connect With Us</h4>
+								<h5 class=" clr-primary mt-2">Connect With Us</h4>
 							</div>
 							<div class="card-body g-3">
 								<div class="row">
@@ -250,7 +268,7 @@
 				<div class="col-md-7">
 					<div class="card">
 						<div class="card-header bg-transparent">
-							<h4 class="fw-semibold clr-primary mt-2">Leave Us A Message</h4>
+							<h5 class=" clr-primary mt-2">Leave Us A Message</h4>
 						</div>
 						<div class="card-body">
 							<form action="" method="post">
@@ -265,7 +283,7 @@
 										<input type="email" name="email" class="form-control" placeholder="Email Address" required>
 									</div>
 								</div>
-								<div class="row my-1">
+								<div class="row mt-3">
 									<div class="form-group col-md-6">
 										<label for="phone">Contact <small class="text-white-50">(Optional)</small></label> <br>
 										<input type="tel" class="form-control" name=phone placeholder="Phone Number" id="phone">
@@ -279,11 +297,11 @@
 										<input type="text" name="comapany" class="form-control" placeholder="Comapany/Organisation">
 									</div>
 								</div>
-								<div class="form-group my-1">
+								<div class="form-group mt-2">
 									<label for="message">Your Message</label>
 									<textarea name="message" class="form-control" placeholder="Your Message" cols="30" rows="3" required></textarea>
 								</div>
-								<div class="mt-2 float-end">
+								<div class="mt-3 float-end">
 									<input type="submit" class="button btn-sm" value="Send Message">
 								</div>
 							</form>

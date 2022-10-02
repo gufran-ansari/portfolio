@@ -26,7 +26,7 @@ class Category(models.Model):
     category_name = models.CharField(max_length=255, choices=CATEGORIES)
 
     def __str__(self):
-        return f"{self.pk}. {self.category_name}"
+        return f"{self.category_name}"
 
 
 class Service(models.Model):

@@ -23,6 +23,8 @@
 	--clr-hover: #921e3f;
 	--clr-light: #ffffff;
 	--clr-text: #072028;
+
+	--shadow: 0 5px 10px rgba(0, 0, 0, .16);
 }
 
 /* Universal Tag */
@@ -187,13 +189,21 @@ footer h5 {
 	text-decoration: none;
 	text-align: center;
 	border-radius: 5px;
-	min-width: 5rem;
+	width: 9rem;
 	color: var(--clr-light);
 	transition: all 250ms ease-in-out;
 	background-color: var(--clr-accent);
-	padding: .75rem 1.25rem;
+	padding: .75rem 1.5rem;
 	font-size: var(--fs-xs);
 	font-weight: var(--fw-500);
+}
+
+.button i {
+	transition: transform .5s;
+}
+
+.button:hover i {
+	transform: translateX(.35rem);
 }
 
 .button:hover,
@@ -278,26 +288,94 @@ footer h5 {
 }
 
 /* SLIDER JS */
-.projects-container {
+.project-container,
+.review-container {
 	overflow: initial;
 }
 
-.project-content {
-	margin-bottom: 3.5rem;
+.project-content,
+.review-content {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2.5rem;
 	gap: 1rem;
+	min-height: 300px;
 }
 
-.project-card {
+.project-card,
+.review-card {
 	background-color: var(--clr-light);
-	max-width: 300px;
 	border-radius: .5rem;
 	cursor: pointer;
 	border: 2px solid rgba(0, 0, 0, .25);
 	transition: all 250ms ease-in-out;
 }
 
-.project-card:hover {
-	transform: scale(1.025);
+.project-card {
+	max-width: 300px;
+}
+
+.review-card {
+	max-width: 380px;
+}
+
+.review-container .card {
+	min-height: 30rem;
+}
+
+.project-card:hover,
+.review-card:hover {
+	transform: translateY(-1rem);
+	box-shadow: var(--shadow);
+}
+
+.project-container .swiper-button-prev::after,
+.project-container .swiper-button-next::after,
+.review-container .swiper-button-prev::after,
+.review-container .swiper-button-next::after {
+	content: '';
+}
+
+.project-container .swiper-button-prev,
+.project-container .swiper-button-next,
+.review-container .swiper-button-prev,
+.review-container .swiper-button-next {
+	width: initial;
+	height: initial;
+	margin: initial;
+	font-size: 3rem;
+	color: var(--clr-accent);
+}
+
+.project-container .swiper-button-prev {
+	left: 1rem;
+	top: 9rem;
+}
+
+.project-container .swiper-button-next {
+	right: 1rem;
+	top: 9rem;
+}
+
+.review-container .swiper-button-prev {
+	left: 1rem;
+	top: 14rem;
+}
+
+.review-container .swiper-button-next {
+	right: 1rem;
+	top: 14rem;
+}
+
+/* Rotate Contact Section Icons */
+
+.contact a {
+	cursor: pointer;
+	transition: transform 2.5s;
+}
+
+.contact a:hover img {
+	transform: rotateY(360deg);
 }
 
 /* ------------------------- Scrolling Animation ------------------------- */
