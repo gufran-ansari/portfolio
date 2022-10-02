@@ -45,7 +45,7 @@ class Project(models.Model):
     client_business = models.CharField(max_length=255, blank=True)
     link = models.CharField(max_length=255, blank=True)
     projectImage = models.ImageField(upload_to='image/our_work')
-    date_posted = models.DateTimeField(auto_now_add=True)
+    date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"{self.project_name} is uploaded by {str(self.user)}"
@@ -70,6 +70,7 @@ class ClientReview(models.Model):
     client_business = models.CharField(max_length=255)
     client_services = models.CharField(max_length=255, choices=SERVICES)
     client_review = models.TextField()
+    projectImage = models.ImageField(Project)
     review_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

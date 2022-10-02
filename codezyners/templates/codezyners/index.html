@@ -62,7 +62,7 @@
 		<div class="container hidden">
 			<div class="card-header bg-transparent w-100 mb-5">
 				<h2 class="text-uppercase fw-bold text-center clr-accent">Our Services</h2>
-				<h6 class="text-uppercase fw-bold text-center clr-primary">Our Speciality</h6>
+				<h6 class="text-uppercase text-center clr-primary">Our Speciality</h6>
 			</div>
 			<div class="row g-3">
 				<div class="col-lg-4">
@@ -125,45 +125,53 @@
 		</div>
 	</section>
 
-	<section class="projects mh-100 flex-center py-5" id="projects">
+	<section class="projects mh-50 flex-center py-5" id="projects">
 		<div class="container hidden">
-			<div class="card-header bg-transparent w-100 mb-5">
-				<h2 class="text-uppercase fw-bold text-center clr-accent">Projects</h2>
-				<h6 class="text-uppercase fw-bold text-center clr-primary">Our Work</h6>
+			<div class="text-uppercase card-header text-center w-100 mb-5">
+				<h2 class="fw-bold clr-accent">Projects</h2>
+				<h6 class="clr-primary">Our Work</h6>
 			</div>
-			<div class="row my-4 g-3">
-				{% for project in work|slice:":4" %}
-				<div class="col-lg-3">
-					<div class="card h-100">
-						<img src="{{ project.projectImage.url }}" alt="{{ project.project_name }}" class="img-fluid">
-						<div class="card-footer bg-transparent">
-							<h6 class="text-uppercase fw-bold text-center clr-primary mt-2">{{ project.project_name }}</h6>
+			<!-- SWIPER JS -->
+			<div class="section-border">
+				<div class="projects-container swiper">
+					<div class="swiper-wrapper project-content text-center">
+						{% for project in work %}
+						<div class="card project-card swiper-slide">
+							<img class="card-img-top img-fluid" src="{{ project.projectImage.url }}" alt="{{ project.project_name }}">
+							<div class="card-footer bg-transparent project-detail">
+								<p class="h5 clr-accent">{{ project.project_name }}</p>
+							</div>
 						</div>
+						{% endfor %}
 					</div>
+					<!-- Swiper Arrow -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
 				</div>
-				{% endfor %}
 			</div>
-			<div class="mt-2 text-center">
-				<a href="{% url 'projects' %}" class="button btn-sm">View More &#10095;</a>
+
+
+			<div class="mt-3 text-center">
+				<a href="{% url 'projects' %}" class="button btn-sm">View More <i class="fa-solid fa-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>
 
 	<section class="reviews mh-100 flex-center py-5" id="reviews">
 		<div class="container hidden">
-			<div class="card-header bg-transparent w-100 mb-5">
-				<h2 class="text-uppercase fw-bold text-center clr-accent">Testimonials</h2>
-				<h6 class="text-uppercase fw-bold text-center clr-primary">What Our Clients Say About Us</h6>
+			<div class="text-uppercase text-center card-header bg-transparent w-100 mb-5">
+				<h2 class="fw-bold clr-accent">Testimonials</h2>
+				<h6 class="clr-primary">What Our Clients Say About Us</h6>
 			</div>
 			<div class="row my-4 g-3">
-				{% for review in reviews|slice:":3" %}
-				<div class="col-lg-4 text-center">
-					<div class="card h-100 p-4">
-						<div class="card-img w-100">
-							<img class="img-fluid rounded-circle" src="{% static 'image/index/user.png' %}" alt="User's Testimonial Review">
+				{% for review in reviews|slice:":4" %}
+				<div class="col-lg-3">
+					<div class="card h-100 text-center">
+						<div class="card-img">
+							<img class="img-fluid card-img-top" src="{% static 'image/index/user.png' %}" alt="User's Testimonial Review">
 						</div>
-						<div class="card-text text-capitalize">
-							<h5 class="text-uppercase fw-bold clr-accent">{{ review.client_name }}</h5>
+						<div class="card-text text-capitalize px-4">
+							<h6 class="text-uppercase fw-bold clr-accent">{{ review.client_name }}</h6>
 							<span class="text-muted">{{ review.review_date }}</span>
 							<p class="clr-primary my-2">
 								<i class="fas fa-quote-left pe-2"></i>
