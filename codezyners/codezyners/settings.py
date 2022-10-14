@@ -192,9 +192,9 @@ PAGINATION_SETTINGS = {
 pip install django_heroku 
 changed to 
 pip install django_on_heroku
-"""
-django_on_heroku.settings(locals())
 
+django_on_heroku.settings(locals())
+"""
 
 """ Message Tag """
 MESSAGE_TAGS = {

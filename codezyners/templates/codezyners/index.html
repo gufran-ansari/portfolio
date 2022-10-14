@@ -60,11 +60,16 @@
 		</div>
 	</section>
 
+	<!-- What Do We Help With  -->
+
+
+
+	<!-- Our Services -->
 	<section class="services mh-100 flex-center py-5" id="services">
 		<div class="container hidden">
-			<div class="card-header bg-transparent w-100 mb-5">
-				<h2 class="text-uppercase fw-bold text-center clr-accent">Our Services</h2>
-				<h6 class="text-uppercase text-center clr-primary">Our Speciality</h6>
+			<div class="card-header text-uppercase  text-center bg-transparent w-100 mb-5">
+				<h2 class="fw-bold clr-accent">Our Services</h2>
+				<h6 class="clr-primary">Our Speciality</h6>
 			</div>
 			<div class="row g-3">
 				<div class="col-lg-4">
@@ -127,6 +132,7 @@
 		</div>
 	</section>
 
+	<!-- Projects -->
 	<section class="projects mh-50 flex-center py-5" id="projects">
 		<div class="container hidden">
 			<div class="text-uppercase card-header text-center w-100 mb-5">
@@ -155,14 +161,13 @@
 					</div>
 				</div>
 			</div>
-
-
 			<div class="mt-3 text-center">
 				<a href="{% url 'projects' %}" class="button btn-sm">View More <i class="fa-solid fa-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>
 
+	<!-- Reviews -->
 	<section class="reviews mh-75 flex-center py-5" id="reviews">
 		<div class="container hidden">
 			<div class="text-uppercase text-center card-header bg-transparent w-100 mb-5">
@@ -172,13 +177,13 @@
 
 			<div class="section-border">
 				<div class="review-container swiper">
-					<div class="swiper-wrapper review-content text-center px-3">
+					<div class="swiper-wrapper review-content text-center">
 						{% for review in reviews|slice:":6" %}
 						<div class="card review-card swiper-slide h-100 text-center">
 							<div class="card-img">
 								<img class="img-fluid card-img-top" src="{% static 'image/index/user.png' %}" alt="User's Testimonial Review">
 							</div>
-							<div class="card-text text-capitalize px-4">
+							<div class="card-body text-capitalize p-3">
 								<h6 class="text-uppercase fw-bold clr-accent">{{ review.client_name }}</h6>
 								<span class="text-muted">{{ review.review_date }}</span>
 								<p class="clr-primary my-2">
@@ -205,6 +210,7 @@
 		</div>
 	</section>
 
+	<!-- Contact -->
 	<section class="contact mh-75 flex-center py-5" id="contact">
 		<div class="container hidden">
 			<div class="card-header bg-transparent w-100 mb-5">
@@ -213,7 +219,7 @@
 			<div class="row g-3">
 				<div class="col-md-5">
 					<!-- Work Online -->
-					<div class="work mb-3">
+					<div class="work mb-2">
 						<div class="card g-3">
 							<div class="card-header bg-transparent">
 								<h5 class=" clr-primary mt-2">Work With Us</h4>
@@ -237,7 +243,34 @@
 					</div>
 
 					<!-- Social Media -->
-					<div class="social">
+					<div class="social mb-2">
+						<div class="card g-3">
+							<div class="card-header bg-transparent">
+								<h5 class=" clr-primary mt-2">Connect With Us</h4>
+							</div>
+							<div class="card-body g-3">
+								<div class="row">
+									<div class="w-100 text-center">
+										<a class="clr-light m-2" href="mailto:codezyners@gmail.com" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/gmail.png' %}" alt="Codezyners Gmail">
+										</a>
+										<a class="clr-light m-2" href="https://www.facebook.com/codezynerss" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/face-book.png' %}" alt="Codezyners Facebook">
+										</a>
+										<a class="clr-light m-2" href="https://instagram.com/codezyners" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/insta.png' %}" alt="Codezyners Instagram">
+										</a>
+										<a class="clr-light m-2" href="https://www.github.com/codezyners" target="_blank">
+											<img class="img-fluid" src="{% static 'image/social/github.png' %}" alt="Codezyners Github">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Social Media -->
+					<div class="social mt-2">
 						<div class="card g-3">
 							<div class="card-header bg-transparent">
 								<h5 class=" clr-primary mt-2">Connect With Us</h4>
@@ -301,7 +334,7 @@
 									<label for="message">Your Message</label>
 									<textarea name="message" class="form-control" placeholder="Your Message" cols="30" rows="3" required></textarea>
 								</div>
-								<div class="mt-3 float-end">
+								<div class="mt-2 float-end">
 									<input type="submit" class="button btn-sm" value="Send Message">
 								</div>
 							</form>

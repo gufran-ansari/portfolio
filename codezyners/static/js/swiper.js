@@ -1,3 +1,4 @@
+// PROJECT SWIPER
 let swiperProject = new Swiper( ".project-container", {
 	cssMode: true,
 	navigation: {
@@ -12,7 +13,7 @@ let swiperProject = new Swiper( ".project-container", {
 } );
 
 
-// Reviews
+// REVIEWS SWIPER
 let swiperReview = new Swiper( ".review-container", {
 	cssMode: true,
 	navigation: {
