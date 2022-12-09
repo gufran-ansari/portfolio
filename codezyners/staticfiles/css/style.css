@@ -17,7 +17,7 @@
 	--fw-700: 700;
 
 	/* Colors */
-	--clr-body: #f5f5f5;
+	--clr-body: #f9f9f9;
 	--clr-primary: #33466d;
 	--clr-accent: #bf0c64;
 	--clr-hover: #921e3f;
@@ -41,7 +41,7 @@ main,
 section {
 	min-width: 100%;
 	font-family: var(--ff);
-	background-color: var(--clr-body);
+	background-color: var(--clr-light);
 }
 
 section h2 {
@@ -309,9 +309,14 @@ footer h5 {
 	min-height: 300px;
 }
 
+.reviews .card,
+.services .card {
+
+	background-color: var(--clr-body);
+}
+
 .project-card,
 .review-card {
-	background-color: var(--clr-light);
 	border-radius: .5rem;
 	cursor: pointer;
 	border: 2px solid rgba(0, 0, 0, .25);
@@ -388,13 +393,29 @@ footer h5 {
 /* ------------------------- Scrolling Animation ------------------------- */
 .hidden {
 	opacity: 0;
-	transition: all .5s ease-in-out;
-	filter: blur(5px);
+	transform: translateY(50px);
+	transition: .5s all ease-in-out;
 }
 
 .show {
 	opacity: 1;
-	filter: blur(0);
+	transform: translateY(0);
+}
+
+
+/* Instagram Media */
+.instagram-media {
+	background: #FFF;
+	border: 0;
+	border-radius: 3px;
+	box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+	margin: 1px;
+	max-width: 540px;
+	min-width: 326px;
+	padding: 0;
+	width: 99.375%;
+	width: -webkit-calc(100% - 2px);
+	width: calc(100% - 2px);
 }
 
 /* ------------------------- Responsive Media Queries -------------------------  */

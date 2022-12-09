@@ -40,11 +40,7 @@ class Project(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     project_name = models.CharField(max_length=255)
-    client_name = models.CharField(max_length=255, blank=True)
-    client_email = models.EmailField(max_length=255, blank=True)
-    client_business = models.CharField(max_length=255, blank=True)
     link = models.CharField(max_length=255, blank=True)
-    projectImage = models.ImageField(upload_to='image/our_work')
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

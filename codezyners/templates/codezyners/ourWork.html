@@ -21,11 +21,13 @@
 
         <div class="row g-3 my-3 text-center">
             {% for page in pageList %}
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="card">
-                    <img src="{{ page.projectImage.url }}" alt="{{ page.project_name }}" class="img-fluid">
                     <div class="card-footer bg-transparent project-detail">
-                        <p class="h5 clr-accent">{{ page.project_name }}</p>
+                        <blockquote class="instagram-media" data-instgrm-permalink="{{page.link}}" data-instgrm-version="14">
+                            <a href="{{page.link}}"></a>
+                        </blockquote>
+                        <script async src="//www.instagram.com/embed.js"></script>
                     </div>
                 </div>
             </div>
@@ -62,7 +64,5 @@
     -->
     </div>
 </section>
-
-
 
 {% endblock content %}

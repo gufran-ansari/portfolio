@@ -22,9 +22,11 @@ distlib==0.3.5
 distro==1.7.0
 dj-database-url==1.0.0
 Django==4.1
+django-crispy-forms==1.14.0
 django-filter==22.1
 django-on-heroku==1.1.2
 django-storages==1.13.1
+engineering-notation==0.6.0
 eyeD3==0.8.10
 filelock==3.6.0
 grpcio==1.30.2
@@ -98,6 +100,8 @@ soupsieve==2.3.1
 sqlparse==0.4.2
 systemd-python==234
 tinycss2==1.1.1
+tk==0.1.0
+tk-tools==0.16.0
 tldextract==3.1.2
 ubuntu-drivers-common==0.0.0
 ufw==0.36.1

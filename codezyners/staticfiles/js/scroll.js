@@ -1,5 +1,4 @@
 // ------------------------- Scroll Tracker ------------------------- //
-
 import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
 
 const scrollTracker = document.querySelector( ".scroll-tracker" );
@@ -17,12 +16,8 @@ scrollTracker.animate( {
 	timeline: scrollTrackingTimeline,
 } );
 
-// ------------------------- Scroll Tracker ------------------------- //
-
-
 
 // ------------------------- Scroll Animation ------------------------- //
-
 const observer = new IntersectionObserver( ( entries ) => {
 	entries.forEach( ( entry ) => {
 		if ( entry.isIntersecting ) {
@@ -36,4 +31,16 @@ const observer = new IntersectionObserver( ( entries ) => {
 const hiddenElements = document.querySelectorAll( '.hidden' );
 hiddenElements.forEach( ( el ) => observer.observe( el ) );
 
-// ------------------------- Scroll Animation ------------------------- //
+
+// ------------------------- Scroll Animation on 50% Screen ------------------------- //
+function scrollAppear() {
+	var introText = document.querySelector( '.hidden' );
+	var introPosition = introText.getBoundingClientRect().top;
+	var screenPosition = window.innerHeight;
+
+	if ( introPosition < screenPosition ) {
+		introText.classList.add( '.show' );
+	}
+}
+
+scrollAppear()

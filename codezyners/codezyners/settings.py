@@ -134,13 +134,6 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# --------------------------------------------------------------------------------------------
-
-""" CUSTOM SETTINGS """
-
-# --------------------------------------------------------------------------------------------
-
 """ Static Settings """
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = '/static/'
@@ -158,27 +151,6 @@ WHITENOISE_AUTOREFRESH = True
 # Whitenoise cache policy
 WHITENOISE_MAX_AGE = 31536000 if not DEBUG else 0  # 1 year
 
-""" AWS Configuration """
-AWS_ACCESS_KEY_ID = "AKIAUBYA6OGTUVTMJ2FQ"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "codezyners"
-
-""" S3 Configuration """
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-
-""" If file doesn't load, add these settings """
-AWS_S3_REGION_NAME = 'us-east-2'  # change to your region
-AWS_S3_SIGNATURE_VERSION = 's3v4'  # this will change S3 version from V2 to V4
-
-AWS_S3_HOST = 'us-east-2'
-S3_USE_SIGV4 = True
-
-
 """ Pagination Setting """
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 3,
@@ -187,32 +159,16 @@ PAGINATION_SETTINGS = {
     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
 }
 
-""" Django Heroku Configuration 
-
-pip install django_heroku 
-changed to 
-pip install django_on_heroku
-
-django_on_heroku.settings(locals())
-"""
-
 """ Message Tag """
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-
 """ Email Configurations """
-"""
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
 EMAIL_HOST_PASSWORD = os.environ.get('PASSWORD')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-
-AWS_ACCESS_KEY_ID = "AKIAUBYA6OGTUVTMJ2FQ"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "codezyners"
-"""
